@@ -1,0 +1,258 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ken's Portfolio</title>
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    /* Global Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: "Georgia", serif;
+      background: linear-gradient(135deg, #000, #111, #1a1a1a);
+      background-size: 400% 400%;
+      animation: gradientShift 15s ease infinite;
+      color: #fff;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* Animated Gradient */
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* Glowing Particles */
+    .particle {
+      position: fixed;
+      border-radius: 50%;
+      background: red;
+      box-shadow: 0 0 10px red, 0 0 20px red;
+      opacity: 0.6;
+      animation: floatUp linear infinite;
+      z-index: 0;
+    }
+    @keyframes floatUp {
+      from { transform: translateY(100vh); }
+      to { transform: translateY(-10vh); }
+    }
+
+    /* Header */
+    header {
+      background: rgba(17, 17, 17, 0.95);
+      padding: 15px 30px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid red;
+    }
+    header h1 {
+      font-size: 1.5rem;
+      color: red;
+      font-family: "Times New Roman", serif;
+    }
+    nav a {
+      color: white;
+      margin-left: 20px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+    nav a:hover {
+      color: red;
+    }
+
+    /* Sections */
+    section {
+      padding: 100px 20px;
+      min-height: 100vh;
+      position: relative;
+      z-index: 1;
+    }
+    #home {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+    #home h2 {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+      color: red;
+      text-shadow: 0 0 5px #ff0000, 0 0 10px #ff3333;
+    }
+    #about, #skills, #contact {
+      background: rgba(17, 17, 17, 0.9);
+      border-top: 2px solid red;
+      border-bottom: 2px solid red;
+      border-radius: 10px;
+      margin: 20px auto;
+      max-width: 1000px;
+      padding: 50px 30px;
+    }
+    h2.section-title {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: red;
+      text-align: center;
+      text-shadow: 0 0 5px red;
+    }
+
+    /* Lists */
+    .skills-list, .contact-list {
+      list-style: none;
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 0;
+    }
+    .skills-list li, .contact-list li {
+      padding: 10px;
+      background: #1a1a1a;
+      margin: 10px 0;
+      border-left: 4px solid red;
+      transition: transform 0.3s ease, background 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .skills-list li:hover, .contact-list li:hover {
+      transform: translateX(10px);
+      background: #222;
+    }
+    .contact-list a {
+      color: white;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    .contact-list a:hover {
+      color: red;
+    }
+    .contact-list i {
+      color: red;
+      transition: transform 0.3s ease, text-shadow 0.3s ease;
+    }
+    .contact-list li:hover i {
+      transform: scale(1.2);
+      text-shadow: 0 0 10px red;
+    }
+
+    /* Footer */
+    footer {
+      background: rgba(17, 17, 17, 0.95);
+      text-align: center;
+      padding: 20px;
+      border-top: 2px solid red;
+      font-size: 0.9rem;
+      z-index: 1000;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      nav a {
+        margin-left: 10px;
+        font-size: 0.9rem;
+      }
+      #home h2 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Glowing Particles -->
+  <div id="particles"></div>
+
+  <header>
+    <h1>Ken's Portfolio</h1>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section id="home">
+    <h2>Welcome to Ken’s Portfolio</h2>
+    <p><i>I'm a BSIT student from St. Paul University Surigao</i></p>
+  </section>
+
+  <section id="about">
+    <h2 class="section-title">About Me</h2>
+    <p>
+      Hi! I'm a BS Information Technology student from St. Paul University Surigao. I have a strong interest in technology, especially in areas like web development, programming, and IT systems. I'm always eager to learn new things and improve my skills through hands-on projects and real-world experiences. I enjoy solving problems, working on creative ideas, and exploring how technology can make life easier. I'm currently building my portfolio to showcase what I've learned and what I can do as I grow in the IT field.</b>
+    </p>
+  </section>
+
+  <section id="skills">
+    <h2 class="section-title">Skills</h2>
+    <ul class="skills-list">
+      <li>Communication</li>
+      <li>Teamwork</li>
+      <li>Adaptability</li>
+      <li>Problem-Solving</li>
+      <li>Creativity</li>
+      <li>Microsoft Office (Word, Excel, PowerPoint)</li>
+      <li>Adobe Photoshop / Canva</li>
+      <li>Public Speaking</li>
+      <li>Technical Writing</li>
+    </ul>
+  </section>
+
+  <section id="contact">
+    <h2 class="section-title">Contact Me</h2>
+    <ul class="contact-list">
+      <li><i class="fab fa-facebook"></i> <a href="https://www.facebook.com/Kenneth.Pepino.04/" target="_blank">Facebook</a></li>
+      <li><i class="fab fa-instagram"></i> <a href="https://www.instagram.com/soooo._.saaaa/" target="_blank">Instagram</a></li>
+      <li><i class="fas fa-phone"></i> <span>+63 962 965 7219</span></li>
+      <li><i class="fas fa-envelope"></i> <a href="mailto:p.kennethnicolai@gmail.com">p.kennethnicolai@gmail.com</a></li>
+      <li><i class="fas fa-map-marker-alt"></i> <span>Sitio Lumaban, Barangay Rizal, Surigao City, Philippines</span></li>
+    </ul>
+  </section>
+
+  <footer>
+    © 2025 Kenneth Nicolai A. Pepino | Portfolio
+  </footer>
+
+  <script>
+    // Smooth scroll
+    document.querySelectorAll('nav a').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+
+    // Generate glowing particles
+    const particlesContainer = document.getElementById('particles');
+    for (let i = 0; i < 20; i++) {
+      const particle = document.createElement('div');
+      particle.classList.add('particle');
+      let size = Math.random() * 8 + 4;
+      particle.style.width = size + "px";
+      particle.style.height = size + "px";
+      particle.style.left = Math.random() * 100 + "vw";
+      particle.style.animationDuration = (Math.random() * 15 + 10) + "s";
+      particle.style.animationDelay = Math.random() * 5 + "s";
+      particlesContainer.appendChild(particle);
+    }
+  </script>
+</body>
+</html>
